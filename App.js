@@ -1,5 +1,13 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Image, Button, Alert } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Button,
+  Alert,
+  TouchableOpacity,
+} from "react-native";
 
 export default function App() {
   function hello() {
@@ -21,12 +29,15 @@ export default function App() {
           source={require("./assets/profile_icon.png")}
         ></Image>
 
-        <View>
-          <Text style={styles.text}>たなか たろう</Text>
-          <Text style={styles.text}>趣味は読書です</Text>
+        <View style={styles.textColumnView}>
+          <Text style={styles.nameText}>たなか たろう</Text>
+          <Text style={styles.detailText}>趣味は読書です</Text>
         </View>
 
-        <Button title="あいさつ" onPress={hello}></Button>
+        <TouchableOpacity style={styles.button} onPress={hello}>
+          <Text style={styles.buttonText}>あいさつ</Text>
+        </TouchableOpacity>
+        {/* <Button title="あいさつ" onPress={hello}></Button> */}
       </View>
     </View>
   );
@@ -41,26 +52,43 @@ const styles = StyleSheet.create({
   },
   baseView: {
     flexDirection: "row",
-  },
-  text: {
-    color: "black",
-    fontSize: 20,
-    // backgroundColor: "black",
+    borderWidth: 2,
+    width: "90%",
+    height: 120,
     padding: 10,
   },
-  textRed: {
-    color: "red",
-    fontWeight: "bold",
-  },
-  viewStyle: {
-    width: 200,
-    height: 100,
-    backgroundColor: "blue",
-    alignItems: "center",
-    justifyContent: "center",
-  },
   profileImg: {
+    flex: 1,
     width: 100,
     height: 100,
+  },
+  textColumnView: {
+    flex: 2,
+    flexDirection: "column",
+  },
+  nameText: {
+    color: "black",
+    fontSize: 20,
+    fontWeight: "bold",
+    padding: 10,
+  },
+  detailText: {
+    color: "black",
+    fontSize: 16,
+    paddingLeft: 15,
+  },
+  button: {
+    flex: 1,
+    backgroundColor: "gray",
+    alignItems: "center",
+    justifyContent: "center",
+    width: 80,
+    alignSelf: "center",
+    height: 36,
+    borderRadius: 18,
+  },
+  buttonText: {
+    color: "white",
+    fontWeight: "bold",
   },
 });
