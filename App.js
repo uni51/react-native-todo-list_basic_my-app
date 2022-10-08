@@ -1,19 +1,14 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, Button } from "react-native";
 
 export default function App() {
+  function hello() {
+    console.log("こんにちは、田中太郎です。");
+  }
+
   return (
     <View style={styles.container}>
-      {/* <Text>Hello World!!</Text> */}
-      {/* <Text style={[styles.text, styles.textRed]}>たなか たろう</Text>
-      <View style={styles.viewStyle}>
-        <Text>てすと</Text>
-      </View> */}
-      <Image
-        resizeMode="contain" // 短い方の辺に合わせてリサイズする
-        style={styles.profileImg}
-        source={require("./assets/profile_icon.png")}
-      ></Image>
+      <Button title="あいさつ" onPress={hello}></Button>
       <StatusBar style="auto" />
     </View>
   );
