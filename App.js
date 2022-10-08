@@ -5,7 +5,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       {/* <Text>Hello World!!</Text> */}
-      <Text>たなか たろう</Text>
+      <Text style={[styles.text, styles.textRed]}>たなか たろう</Text>
       <StatusBar style="auto" />
     </View>
   );
@@ -17,5 +17,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+  },
+  text: {
+    color: "white",
+    fontSize: 20,
+    backgroundColor: "black",
+    padding: 10,
+  },
+  textRed: {
+    color: "red",
+    fontWeight: "bold",
   },
 });
