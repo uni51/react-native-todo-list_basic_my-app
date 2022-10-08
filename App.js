@@ -15,8 +15,19 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Button title="あいさつ" onPress={hello}></Button>
-      <StatusBar style="auto" />
+      <View style={styles.baseView}>
+        <Image
+          style={styles.profileImg}
+          source={require("./assets/profile_icon.png")}
+        ></Image>
+
+        <View>
+          <Text style={styles.text}>たなか たろう</Text>
+          <Text style={styles.text}>趣味は読書です</Text>
+        </View>
+
+        <Button title="あいさつ" onPress={hello}></Button>
+      </View>
     </View>
   );
 }
@@ -28,10 +39,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  baseView: {
+    flexDirection: "row",
+  },
   text: {
-    color: "white",
+    color: "black",
     fontSize: 20,
-    backgroundColor: "black",
+    // backgroundColor: "black",
     padding: 10,
   },
   textRed: {
@@ -47,6 +61,6 @@ const styles = StyleSheet.create({
   },
   profileImg: {
     width: 100,
-    height: 50,
+    height: 100,
   },
 });
